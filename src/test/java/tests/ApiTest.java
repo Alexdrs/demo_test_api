@@ -18,10 +18,10 @@ public class ApiTest extends BaseSteps{
         checkGetResponse();
     }
 
-//    @Test()
-//    public void testPOST() {
-//        long threadId = Thread.currentThread().getId();
-//        System.out.println("Thread Post:" + threadId);
+    @Test()
+    public void testPOST() {
+        long threadId = Thread.currentThread().getId();
+        System.out.println("Thread Post:" + threadId);
 //        Map<String, String> data = new HashMap<>();
 //        data.put("orderId", "2");
 //        given()
@@ -30,7 +30,7 @@ public class ApiTest extends BaseSteps{
 //                .when().post("http://httpbin.org/post").then()
 //                .statusCode(200)
 //                .body("json.orderId", equalTo("2"));
-//    }
+    }
 //
 //
 //    @Test(dataProvider = "api")
