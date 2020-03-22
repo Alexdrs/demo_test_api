@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 
 <log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
@@ -14,9 +14,10 @@
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%m%n"/>
         </layout>
+        <filter class="tests.helpers.reporter.TestFilter"/>
     </appender>
     <appender name="FileAppender" class="org.apache.log4j.RollingFileAppender">
-        <param name="Encoding" value="utf-8"/>
+        <param name="Encoding" value="UTF-8"/>
         <param name="File" value="sample.log"/>
         <param name="MaxFileSize" value="20MB"/>
         <layout class="org.apache.log4j.PatternLayout">
@@ -24,8 +25,9 @@
         </layout>
     </appender>
 
-    <logger name="org.apache.velocity">
+    <logger name="tests.helpers.reporter.LogListener">
         <level value="DEBUG"/>
+        <appender-ref ref="testConsole"/>
     </logger>
     <logger name="org.apache.velocity">
         <level value="ERROR"/>

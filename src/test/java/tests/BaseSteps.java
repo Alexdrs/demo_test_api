@@ -2,6 +2,7 @@ package tests;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
+import org.apache.log4j.Logger;
 
 import static io.restassured.RestAssured.given;
 
@@ -10,9 +11,11 @@ import static io.restassured.RestAssured.given;
  */
 
 public class BaseSteps {
+    protected final static Logger LOG = Logger.getLogger(BaseSteps.class);
 
     @Step("Проверка запроса гет")
     public void checkGetResponse(){
+        LOG.info("Проверка Get запроса");
         long threadId = Thread.currentThread().getId();
         System.out.println("Thread Get:" + threadId);
         Response response1 =
@@ -27,5 +30,6 @@ public class BaseSteps {
 //                        .body("args.a", equalTo("1"))
                         .extract()
                         .response();
+        LOG.info(response1.print());
     }
 }
