@@ -17,11 +17,11 @@ import static org.hamcrest.Matchers.equalTo;
 public class BaseSteps {
     protected final static Logger LOG = Logger.getLogger(BaseSteps.class);
 
-    @Step("Проверка запроса гет")
+    @Step("Check GET request")
     public void checkGetResponse(){
-        LOG.info("Проверка Get запроса");
+        LOG.info("Check GET request");
         long threadId = Thread.currentThread().getId();
-        System.out.println("Thread Get:" + threadId);
+        LOG.info("Thread Get:" + threadId);
         Response response1 =
                 given()
                         .log().all()

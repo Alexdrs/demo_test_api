@@ -19,14 +19,14 @@ public class ApiTest extends BaseSteps {
         checkGetResponse();
     }
 
-    @TmsLink("Test 493996&")
+    @TmsLink("Test 493943")
     @Test(description = "Check the POST request")
     public void testPOST() {
         checkPostRequest();
     }
 
 
-    @TmsLink("Test 493996&")
+    @TmsLink("Test 493434")
     @Test(dataProvider = "api", description = "Check the POST and GET with parallel run and dataProvider")
     public void test(String method) {
         if (method.equals("post")) {
