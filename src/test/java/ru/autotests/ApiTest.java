@@ -1,4 +1,4 @@
-package tests;
+package ru.autotests;
 
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -14,11 +14,11 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-@Epic("Минимальный набор позитивных кейсов")
-@Feature("Проверка запросов")
+@Epic("Минимальный набор позитивных кейсов\\Minimum set of positive cases")
+@Feature("Проверка запросов\\checking requests")
 public class ApiTest extends BaseSteps{
     @TmsLink("http://tfs.infotecs.ru:8080/tfs/infotecstc1/PRG_SIES/R610%20SIES%20MC/_workitems?id=493996&_a=edit")
-    @Test(description = "Применить сетевые настройки Основной сценарий")
+    @Test(description = "Применить сетевые настройки Основной сценарий \\ To apply the network settings the Main scenario")
     public void testGet() {
         checkGetResponse();
     }
@@ -26,7 +26,7 @@ public class ApiTest extends BaseSteps{
     @Test()
     public void testPOST() {
         long threadId = Thread.currentThread().getId();
-        System.out.println("Thread Post:" + threadId);
+        LOG.info("Thread Post:" + threadId);
         Map<String, String> data = new HashMap<>();
         data.put("orderId", "2");
         given()
@@ -42,18 +42,18 @@ public class ApiTest extends BaseSteps{
     public void test(String method) {
         if (method.equals("post")) {
             Date date = new Date();
-            System.out.println("Начало " + method + " "+ new Timestamp(date.getTime()));
+              LOG.info("Начало " + method + " "+ new Timestamp(date.getTime()));
             testPOST();
             date=new Date();
-            System.out.println("Конец " + method + " "+ new Timestamp(date.getTime()));
+              LOG.info("Конец " + method + " "+ new Timestamp(date.getTime()));
             return;
         }
         if (method.equals("get")) {
             Date date = new Date();
-            System.out.println("Начало " + method + " " +new Timestamp(date.getTime()));
+              LOG.info("Начало " + method + " " +new Timestamp(date.getTime()));
             testGet();
             date=new Date();
-            System.out.println("Конец " + method + " "+ new Timestamp(date.getTime()));
+              LOG.info("Конец " + method + " "+ new Timestamp(date.getTime()));
             return;
         }
     }

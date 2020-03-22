@@ -14,7 +14,7 @@
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%m%n"/>
         </layout>
-        <filter class="tests.helpers.reporter.TestFilter"/>
+        <filter class="ru.autotests.helpers.reporter.TestFilter"/>
     </appender>
     <appender name="FileAppender" class="org.apache.log4j.RollingFileAppender">
         <param name="Encoding" value="UTF-8"/>
@@ -25,7 +25,7 @@
         </layout>
     </appender>
 
-    <logger name="tests.helpers.reporter.LogListener">
+    <logger name="ru.autotests.helpers.reporter.LogListener">
         <level value="DEBUG"/>
         <appender-ref ref="testConsole"/>
     </logger>

@@ -1,4 +1,4 @@
-package tests;
+package ru.autotests;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
